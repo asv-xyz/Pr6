@@ -3,7 +3,7 @@
 # Functions
 show_users() {
     # Get list of users and their home directories, sort alphabetically
-    getent passwd | awk -F: '{print $1 ": " $6}' | sort
+    cat /etc/passwd | cut -d ":" -f 1,6 | sort
 }
 
 show_processes() {
